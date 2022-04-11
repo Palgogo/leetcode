@@ -1,23 +1,10 @@
 package preorder
 
+import TreeNode
 import java.util.Deque
 import java.util.LinkedList
 
 //todo reformat project ot gradle multimodule
-open class TreeNode {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-    var value: Int = 0
-
-    constructor()
-    constructor(value: Int) {this.value = value}
-    constructor(value: Int, left: TreeNode, right: TreeNode){
-        this.value = value
-        this.left = left
-        this.right = right
-    }
-}
-
 
 //recursion
 fun preorderTraversal(root: TreeNode?) : List<Int>{
