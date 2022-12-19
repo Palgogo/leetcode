@@ -5,7 +5,7 @@ import java.util.LinkedList
 import java.util.Queue
 
 class LevelTraversal {
-    fun traversalLevel(root:TreeNode?):List<List<Int>>{
+    fun traversalLevel(root:TreeNode?):List<List<Int>> {
         val result :MutableList<MutableList<Int>> = ArrayList()
         val level: Queue<TreeNode> = LinkedList()
         if (root != null){
