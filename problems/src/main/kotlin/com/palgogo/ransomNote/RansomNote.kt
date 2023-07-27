@@ -9,11 +9,10 @@ class RansomNote {
         if (result){
             for (i in magazine.indices) {
                 if (map[magazine[i]] == null) {
-                    map.put(magazine[i], 1)
+                    map[magazine[i]] = 1
                 } else {
                     val value = map[magazine[i]]!!.plus(1)
-
-                        map.put(magazine[i], value)
+                    map[magazine[i]] = value
 
                 }
             }
