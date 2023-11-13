@@ -16,4 +16,22 @@ public class TwoSumIISortedArray {
         }
         return new int[]{0,0};
     }
+
+    public int[] twosumII(int[] numbers, int target){
+        int leftPointer = 0;
+        int rightPointer = numbers.length - 1;
+        int leftNum, rightNum;
+
+        while (leftPointer < rightPointer){
+            leftNum = numbers[leftPointer];
+            rightNum = numbers[rightPointer];
+             if (leftNum + rightNum == target) break;
+            if (leftNum + rightNum < target){
+                leftPointer++;
+                continue;
+            }
+            rightPointer--;
+        }
+        return new int[] {leftPointer + 1, rightPointer + 1};
+    }
 }
