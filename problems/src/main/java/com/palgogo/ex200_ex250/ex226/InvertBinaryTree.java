@@ -1,5 +1,7 @@
 package com.palgogo.ex200_ex250.ex226;
 
+import com.palgogo.common.TreeNode;
+
 import java.util.LinkedList;
 
 public class InvertBinaryTree {

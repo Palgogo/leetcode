@@ -1,5 +1,6 @@
 package com.palgogo.ex200_ex250.ex226;
 
+import com.palgogo.common.TreeNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ class InvertBinaryTreeTest {
         //given
         int[] root = {4, 2, 7, 1, 3, 6, 9};
         int[] expected = {4, 7, 2, 9, 6, 3, 1};
-        TreeNode node = TreeNode.createTreeFromArray(TreeNode.levelTraversal(root));
+        TreeNode node = TreeNode.createBinaryTree(root);
         //when
         InvertBinaryTree invertBinaryTree = new InvertBinaryTree();
         TreeNode result = invertBinaryTree.invertBinaryTree(node);
@@ -24,7 +25,7 @@ class InvertBinaryTreeTest {
         //given
         int[] root = {4, 2, 7, 1, 3, 6, 9};
         int[] expected = {4, 7, 2, 9, 6, 3, 1};
-        TreeNode node = TreeNode.createTreeFromArray(TreeNode.levelTraversal(root));
+        TreeNode node = TreeNode.createBinaryTree(root);
         //when
         InvertBinaryTree invertBinaryTree = new InvertBinaryTree();
         TreeNode result = invertBinaryTree.invertBinaryTreeIterative(node);
