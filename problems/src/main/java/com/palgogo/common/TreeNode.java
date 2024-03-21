@@ -68,15 +68,37 @@ public class TreeNode {
         return nodes[0]; // The root of the binary tree
     }
 
-    void inOrderTraversal(List<Integer> list) {
-        if (this.left != null) {
-            this.left.inOrderTraversal(list);
+    public static TreeNode createBinaryTree(List<Integer> list){
+        if (list.isEmpty()) return null;
+        TreeNode[] treeNodes = new TreeNode[list.size()];
+
+        for (Integer val:list){
+            if (val != null && val != Integer.MIN_VALUE){
+                treeNodes[val] = new TreeNode(val);
+            }
         }
-        list.add(this.val);
-        if (this.right != null) {
-            this.right.inOrderTraversal(list);
+
+        assignChildrenFotEachNode(list, treeNodes);
+
+        return treeNodes[0];
+    }
+
+    private static void assignChildrenFotEachNode(List<Integer> list, TreeNode[] nodes) {
+        //Assign children for each node
+        for (Integer val : list) {
+            if (nodes[val] != null){
+                int leftIndex = 2 * val + 1;
+                int rightIndex = 2 * val + 2;
+                if (leftIndex < list.size() && nodes[leftIndex] != null) {
+                    nodes[val].left = nodes[leftIndex];
+                }
+                if (rightIndex < list.size() && nodes[rightIndex] != null) {
+                    nodes[val].right = nodes[rightIndex];
+                }
+            }
         }
     }
+
 
     private static void assignChildrenFotEachNode(int[] array, TreeNode[] nodes) {
         // Assign children for each node
@@ -91,6 +113,16 @@ public class TreeNode {
                     nodes[i].right = nodes[rightIndex];
                 }
             }
+        }
+    }
+
+    void inOrderTraversal(List<Integer> list) {
+        if (this.left != null) {
+            this.left.inOrderTraversal(list);
+        }
+        list.add(this.val);
+        if (this.right != null) {
+            this.right.inOrderTraversal(list);
         }
     }
 
