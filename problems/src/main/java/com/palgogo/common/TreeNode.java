@@ -6,18 +6,18 @@ import java.util.List;
 import java.util.Queue;
 
 public class TreeNode {
-    public int val;
+    public Integer val;
     public TreeNode left;
     public TreeNode right;
 
     public TreeNode() {
     }
 
-    public TreeNode(int val) {
+    public TreeNode(Integer val) {
         this.val = val;
     }
 
-    public TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(Integer val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -72,10 +72,8 @@ public class TreeNode {
         if (list.isEmpty()) return null;
         TreeNode[] treeNodes = new TreeNode[list.size()];
 
-        for (Integer val:list){
-            if (val != null && val != Integer.MIN_VALUE){
-                treeNodes[val] = new TreeNode(val);
-            }
+        for (int i = 0; i < list.size(); i++) {
+            treeNodes[i] = new TreeNode(list.get(i));
         }
 
         assignChildrenFotEachNode(list, treeNodes);
@@ -86,7 +84,8 @@ public class TreeNode {
     private static void assignChildrenFotEachNode(List<Integer> list, TreeNode[] nodes) {
         //Assign children for each node
         for (Integer val : list) {
-            if (nodes[val] != null){
+            if (val != null && nodes[val] != null) {
+
                 int leftIndex = 2 * val + 1;
                 int rightIndex = 2 * val + 2;
                 if (leftIndex < list.size() && nodes[leftIndex] != null) {
@@ -96,6 +95,7 @@ public class TreeNode {
                     nodes[val].right = nodes[rightIndex];
                 }
             }
+
         }
     }
 
