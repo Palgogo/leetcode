@@ -1,9 +1,8 @@
-package com.palgogo.ex700_ex750.ex739;
+package com.palgogo.ex700_ex750;
 
+import com.palgogo.ex700_ex750.ex739.DailyTemperature;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DailyTemperatureTest {
 

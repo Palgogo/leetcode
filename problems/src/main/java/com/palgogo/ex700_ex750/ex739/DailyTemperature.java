@@ -2,7 +2,6 @@ package com.palgogo.ex700_ex750.ex739;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 public class DailyTemperature {
     public int[] dailyTemperatures(int[] temperatures) {
