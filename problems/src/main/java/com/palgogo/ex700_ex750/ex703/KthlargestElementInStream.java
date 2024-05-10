@@ -3,11 +3,12 @@ package com.palgogo.ex700_ex750.ex703;
 import java.util.PriorityQueue;
 
 public class KthlargestElementInStream {
-    PriorityQueue<Integer> heap = new PriorityQueue<>();
+    PriorityQueue<Integer> heap;
     final int k;
 
     KthlargestElementInStream(int k, int[] nums){
         this.k = k;
+        heap = new PriorityQueue<>(k);
         for(int n:nums) add(n);
     }
 
