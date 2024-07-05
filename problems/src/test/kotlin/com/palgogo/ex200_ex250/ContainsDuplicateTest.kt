@@ -8,7 +8,7 @@ class ContainsDuplicateTest{
     fun containsDuplicate(){
         val containsDuplicate = ContainsDuplicate()
         val isHaveDuplicate = containsDuplicate.containsDuplicate(intArrayOf(1, 2, 3, 4))
-        assertTrue(isHaveDuplicate)
+        assertFalse(isHaveDuplicate)
     }
 
     @Test

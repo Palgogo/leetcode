@@ -1,16 +1,20 @@
-/*
 package com.palgogo.ex200_ex250
 
 class ValidAnagram {
     fun isAnagram(s:String, t:String) : Boolean {
         //set s in hashmap
-        val map = mutableMapOf<Char, Int>()
-        for (char in s){
+        val map = s.groupingBy { it }.eachCount().toMutableMap()
+        //remove from map if we find it
 
-            if (map.containsKey(key = char)){
-//                map[char] = map[char].plus(1)
-            }
+        t.forEach { character ->
+            map[character]?.let { count ->
+                when {
+                    count > 1 -> map[character] = count - 1
+                    else -> map.remove(character)
+                }
+            } ?: return false
         }
-        return false
+
+        return map.isEmpty()
     }
-}*/
+}
