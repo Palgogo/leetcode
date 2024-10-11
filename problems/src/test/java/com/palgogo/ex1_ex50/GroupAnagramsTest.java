@@ -1,13 +1,11 @@
 package com.palgogo.ex1_ex50;
 
+import com.palgogo.ex1_ex50.ex49.GroupAnagrams;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class GroupAnagramsTest {
 

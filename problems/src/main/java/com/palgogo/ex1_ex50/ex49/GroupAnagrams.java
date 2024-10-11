@@ -1,4 +1,4 @@
-package com.palgogo.ex1_ex50;
+package com.palgogo.ex1_ex50.ex49;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -11,9 +11,10 @@ public class GroupAnagrams {
         //take the first string
         List<List<String>> result = new ArrayList<>();
         if (strs.length == 1 && strs[0].isEmpty()){
-             result.add(List.of(""));
+            result.add(List.of(""));
             return result;
         }
+
         for (int i = 0; i < strs.length; i++) {
             List<String> anagramList = new ArrayList<>();
             if (!Objects.equals(strs[i], "")) {
@@ -84,5 +85,22 @@ public class GroupAnagrams {
         }
 
         return chars.isEmpty();
+    }
+
+    public List<List<String>> groupAnagram(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
+
+        for (String str : strs) {
+            char[] charArray = str.toCharArray();
+            Arrays.sort(charArray);
+            String sortedWord = new String(charArray);
+
+            if (!map.containsKey(sortedWord)) {
+                map.put(sortedWord, new ArrayList<>());
+            }
+            map.get(sortedWord).add(str);
+        }
+
+        return new ArrayList<>(map.values());
     }
 }
